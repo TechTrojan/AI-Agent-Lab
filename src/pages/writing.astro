@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostList from '../components/PostList.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('posts')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout title="Writing & Updates | Mukesh Zala" description="Updates on RAG evaluation, architecture, and reliability-first engineering.">
+  <section class="section container">
+    <h1 class="text-4xl font-bold">Writing / Updates</h1>
+    <p class="mt-4 max-w-3xl text-slate-600 dark:text-slate-300">
+      Notes and field updates on applied AI experiments, distributed systems design, and operational excellence.
+    </p>
+    <div class="mt-8">
+      <PostList posts={posts} />
+    </div>
+  </section>
+</BaseLayout>

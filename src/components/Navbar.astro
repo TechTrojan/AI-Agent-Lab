@@ -1,0 +1,36 @@
+---
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/writing/', label: 'Writing' }
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
+  <div class="container flex h-16 items-center justify-between">
+    <a href="/" class="text-sm font-semibold tracking-wide">Mukesh Zala</a>
+
+    <nav aria-label="Main navigation" class="flex items-center gap-2 sm:gap-4">
+      {navItems.map((item) => (
+        <a href={item.href} class="rounded-md px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">{item.label}</a>
+      ))}
+      <button id="theme-toggle" class="rounded-md border border-slate-300 px-3 py-2 text-sm font-medium dark:border-slate-700" aria-label="Toggle color theme" type="button">
+        <span class="dark:hidden">🌙</span>
+        <span class="hidden dark:inline">☀️</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  const root = document.documentElement;
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') root.classList.add('dark');
+  if (savedTheme === 'light') root.classList.remove('dark');
+
+  const btn = document.getElementById('theme-toggle');
+  btn?.addEventListener('click', () => {
+    root.classList.toggle('dark');
+    localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+  });
+</script>
