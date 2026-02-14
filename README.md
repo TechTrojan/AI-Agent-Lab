@@ -26,33 +26,6 @@ npm run build
 
 Generated output is in `dist/`.
 
-## Preview Production Build Locally
-
-```bash
-npm run build
-npm run preview
-```
-
-This serves the generated static site for a deployment-like preview.
-
-## Troubleshooting install/build
-
-If `npm install` fails due registry/proxy policy, ensure npm points to public registry:
-
-```bash
-npm config set registry https://registry.npmjs.org/
-npm config delete proxy
-npm config delete https-proxy
-npm install
-```
-
-Then run:
-
-```bash
-npm run build
-npm run preview
-```
-
 ## Content Management
 
 ### Add/Update projects
