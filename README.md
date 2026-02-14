@@ -26,15 +26,6 @@ npm run build
 
 Generated output is in `dist/`.
 
-## Preview Production Build Locally
-
-```bash
-npm run build
-npm run preview
-```
-
-This serves the generated static site for a deployment-like preview.
-
 ## Content Management
 
 ### Add/Update projects
