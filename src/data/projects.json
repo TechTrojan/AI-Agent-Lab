@@ -1,0 +1,26 @@
+[
+  {
+    "title": "RAG Knowledge Assistant",
+    "summary": "Semantic search + generation pipeline for incident playbooks with source-cited answers.",
+    "tags": ["RAG", "Python", "Vector DB", "Azure OpenAI"],
+    "image": "/images/project-rag.svg",
+    "repoUrl": "https://github.com/mukeshzala/rag-knowledge-assistant",
+    "demoUrl": "#"
+  },
+  {
+    "title": "Event-Driven Order Intelligence",
+    "summary": "Kafka-based microservices system that enriches and monitors order events with reliability SLOs.",
+    "tags": ["Microservices", "Event-Driven Architecture", "C#", "Kubernetes"],
+    "image": "/images/project-cloud.svg",
+    "repoUrl": "https://github.com/mukeshzala/event-order-intelligence",
+    "demoUrl": "#"
+  },
+  {
+    "title": "RAG Evaluation Workbench",
+    "summary": "Automated evaluation harness comparing retrieval quality, grounding, and latency across prompts.",
+    "tags": ["RAG", "LLM", "Observability", "Python"],
+    "image": "/images/project-observability.svg",
+    "repoUrl": "https://github.com/mukeshzala/rag-eval-workbench",
+    "demoUrl": "#"
+  }
+]

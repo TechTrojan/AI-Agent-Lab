@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" fill="none">
+  <rect width="1200" height="700" fill="#0f172a"/>
+  <rect x="70" y="160" width="280" height="120" rx="16" fill="#1e293b" stroke="#334155"/>
+  <rect x="460" y="160" width="280" height="120" rx="16" fill="#1e293b" stroke="#334155"/>
+  <rect x="850" y="160" width="280" height="120" rx="16" fill="#1e293b" stroke="#334155"/>
+  <rect x="460" y="420" width="280" height="120" rx="16" fill="#1e293b" stroke="#334155"/>
+  <path d="M350 220H460M740 220H850M600 280V420" stroke="#38bdf8" stroke-width="6" stroke-linecap="round"/>
+  <text x="130" y="230" fill="#e2e8f0" font-size="34" font-family="Arial">Ingest</text>
+  <text x="520" y="230" fill="#e2e8f0" font-size="34" font-family="Arial">Retrieve</text>
+  <text x="920" y="230" fill="#e2e8f0" font-size="34" font-family="Arial">Generate</text>
+  <text x="520" y="490" fill="#e2e8f0" font-size="34" font-family="Arial">Evaluate</text>
+</svg>

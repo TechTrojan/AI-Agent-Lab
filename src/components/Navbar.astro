@@ -1,0 +1,53 @@
+---
+import { profile } from '../data/profile';
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/writing/', label: 'Writing' }
+];
+const path = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80">
+  <div class="container flex h-16 items-center justify-between">
+    <a href="/" class="flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-900 transition hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 dark:text-slate-100 dark:hover:text-brand-300">
+      <img src="/images/header-mark.svg" alt={`${profile.name} brand mark`} class="h-7 w-7 rounded" />
+      <span>{profile.name}</span>
+    </a>
+
+    <nav aria-label="Main navigation" class="flex items-center gap-2 sm:gap-4">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          aria-current={path === item.href ? 'page' : undefined}
+          class="rounded-md px-3 py-2 text-sm font-medium transition hover:bg-brand-50 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 dark:hover:bg-slate-800 dark:hover:text-brand-300"
+        >
+          {item.label}
+        </a>
+      ))}
+      <button
+        id="theme-toggle"
+        class="rounded-md border border-slate-300/90 bg-white/80 px-3 py-2 text-sm font-medium transition hover:border-brand-300 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 dark:border-slate-700 dark:bg-slate-900/80 dark:hover:border-brand-600 dark:hover:text-brand-300"
+        aria-label="Toggle color theme"
+        type="button"
+      >
+        <span class="dark:hidden">🌙</span>
+        <span class="hidden dark:inline">☀️</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  const root = document.documentElement;
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') root.classList.add('dark');
+  if (savedTheme === 'light') root.classList.remove('dark');
+
+  const btn = document.getElementById('theme-toggle');
+  btn?.addEventListener('click', () => {
+    root.classList.toggle('dark');
+    localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+  });
+</script>
