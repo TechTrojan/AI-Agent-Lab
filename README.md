@@ -26,67 +26,6 @@ npm run build
 
 Generated output is in `dist/`.
 
-## Preview Production Build Locally
-
-```bash
-npm run build
-npm run preview  # opens on local network as well
-```
-
-This serves the generated static site for a deployment-like preview.
-
-## Troubleshooting install/build
-
-## Windows fix for `esbuild` / `@astrojs/check` errors
-
-If your local branch still tries `astro check`, first sync latest source from GitHub (current build script is `astro build`).
-
-If you see an esbuild platform error like missing `@esbuild/win32-x64`, it usually means optional dependencies were skipped or `node_modules` is stale.
-
-**PowerShell (Windows):**
-
-```powershell
-Remove-Item -Recurse -Force node_modules
-Remove-Item -Force package-lock.json
-npm cache clean --force
-npm install --include=optional
-npm run build
-```
-
-Also verify npm is not omitting optional deps:
-
-```powershell
-npm config set include optional
-npm config set optional true
-```
-
-If `npm install` fails due registry/proxy policy, ensure npm points to public registry:
-
-```bash
-npm config set registry https://registry.npmjs.org/
-npm config delete proxy
-npm config delete https-proxy
-npm install
-```
-
-Then run:
-
-```bash
-npm run build
-npm run preview  # opens on local network as well
-```
-
-## Design Assets
-
-Professional SVG assets are stored in `public/images/` for:
-
-- Home hero (`home-hero.svg`)
-- Header brand mark (`header-mark.svg`)
-- Footer background grid (`footer-grid.svg`)
-- Project thumbnails (`project-*.svg`)
-
-You can replace them with your own images while keeping the same filenames for quick swaps.
-
 ## Content Management
 
 ### Add/Update projects
